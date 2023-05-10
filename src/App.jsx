@@ -105,7 +105,6 @@ function App() {
 
                 <Route path="/admin" element={<SideBarAdmin />}>
                   <Route
-                    index
                     path="/admin"
                     element={
                       <ProtectedRoute>
