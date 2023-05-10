@@ -52,9 +52,9 @@ const LandingPage = () => {
           <div className="container py-3 d-flex flex-column justify-content-between align-items-center align-content-center">
             <h2 className="h-several-product">Several Product</h2>
           </div>
-          <div className="row m-auto">
+          <div className="row">
             {products.map((product) => (
-              <div className="col-lg-4 col-md-6 text-align-left mb-4" key={product.id}>
+              <div className="col-lg-3 col-md-6 text-align-left mb-4" key={product.id}>
                 <CardProduct id={product.id} name={product.productName} category={product.productCategory} image={product.productImage} price={product.price} />
               </div>
             ))}

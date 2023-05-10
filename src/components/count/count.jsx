@@ -32,16 +32,16 @@ const CountQuantity = ({ onChange, value }) => {
       <div className="container d-flex justify-content-center align-items-center text-center">
         <div className="row">
           <div className="col">
-            <button type="button" className="btn btn-minus btn-danger" onClick={decreaseQuantity}>
-              <i className="fas fa-minus"></i>
+            <button type="button" className="btn  btn-outline-danger" onClick={decreaseQuantity}>
+              -
             </button>
           </div>
           <div className="col">
             <input type="number" className="form-control" value={quantity} onChange={handleInputChange} />
           </div>
           <div className="col">
-            <button type="button" className="btn btn-plus btn-primary" onClick={increaseQuantity}>
-              <i className="fas fa-plus"></i>
+            <button type="button" className="btn  btn-outline-primary" onClick={increaseQuantity}>
+              +
             </button>
           </div>
         </div>
