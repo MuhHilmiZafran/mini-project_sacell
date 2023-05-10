@@ -104,14 +104,6 @@ const Checkout = () => {
                 <h3 className="card-title">Profile</h3>
                 <form onSubmit={handleEditUser}>
                   <div className="form-group my-2">
-                    <label htmlFor="firstname">First Name</label>
-                    <input type="text" className="form-control" id="firstname" placeholder="First Name" value={dataUser.firstname} onChange={handleInputChange} />
-                  </div>
-                  <div className="form-group my-2">
-                    <label htmlFor="lastname">Last Name</label>
-                    <input type="text" className="form-control" id="lastname" placeholder="Last Name" value={dataUser.lastname} onChange={handleInputChange} />
-                  </div>
-                  <div className="form-group my-2">
                     <label htmlFor="text">Email</label>
                     <input type="email" className="form-control" id="email" placeholder="email" value={dataUser.email} onChange={handleInputChange} />
                   </div>
@@ -127,10 +119,6 @@ const Checkout = () => {
                     <label htmlFor="phone">Phone</label>
                     <input type="text" className="form-control" id="phone" placeholder="08xxxxxxxxxx" value={dataUser.phone} onChange={handleInputChange} />
                   </div>
-
-                  <button type="submit" className="btn btn-primary btn-block my-2 ">
-                    Edit
-                  </button>
                 </form>
               </div>
             </div>
