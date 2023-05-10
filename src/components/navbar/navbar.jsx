@@ -2,7 +2,7 @@ import { Outlet, useNavigate } from 'react-router';
 import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../context/auth-context';
 import { useContext } from 'react';
-import Footer from '../Footer/footer';
+import Footer from '../footer/footer';
 
 const NavBar = () => {
   const { user, logout } = useContext(UserContext);
