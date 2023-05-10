@@ -1,16 +1,16 @@
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
-import { UserAuth } from '../../context/auth';
-import { useEffect, useState } from 'react';
+import { UserContext } from '../../context/auth-context';
+import { useContext, useEffect, useState } from 'react';
 
 const Profile = () => {
-  const { user } = UserAuth();
+  const { user } = useContext(UserContext);
   const [dataUser, setDataUser] = useState({});
 
   useEffect(() => {
     const getUser = async () => {
-      const docRef = doc(db, 'users', user.uid);
-      const docSnap = await getDoc(docRef);
+      const userRef = doc(db, 'users', user.uid);
+      const docSnap = await getDoc(userRef);
 
       if (docSnap.exists()) {
         console.log('Document data:', docSnap.data());
@@ -29,11 +29,9 @@ const Profile = () => {
       {dataUser && <p>{dataUser.username}</p>}
       {dataUser && <p>{dataUser.firstname}</p>}
       {dataUser && <p>{dataUser.lastname}</p>}
-      {dataUser && <p>{dataUser.username}</p>}
-      {dataUser && <p>{dataUser.firstname}</p>}
+      {dataUser && <p>{dataUser.address}</p>}
+      {dataUser && <p>{dataUser.email}</p>}
       {dataUser && <p>{dataUser.lastname}</p>}
-      {dataUser && <p>{dataUser.username}</p>}
-      <p></p>
     </div>
   );
 };
