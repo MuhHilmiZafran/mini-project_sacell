@@ -2,13 +2,10 @@ import { useContext } from 'react';
 import imageHero from '../../assets/hero-img.png';
 import { ProductContext } from '../../context/product-context';
 import CardProduct from '../../components/card/card-product';
-import { UserContext } from '../../context/auth-context';
 
 const LandingPage = () => {
   const { products } = useContext(ProductContext);
-  const { user } = useContext(UserContext);
 
-  if (!user) return;
   return (
     <div>
       <section className="welcome-page d-flex py-3 align-items-center w-100">
