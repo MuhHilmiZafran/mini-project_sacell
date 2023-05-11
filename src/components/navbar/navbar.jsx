@@ -64,18 +64,17 @@ const NavBar = () => {
                       <hr className="dropdown-divider" />
                     </li>
                     <li>
-                      {user ? (
-                        <button className="btn btn-danger w-100" onClick={handleLogout}>
-                          Sign Out
-                        </button>
-                      ) : (
-                        <button className="btn btn-primary w-100" onClick={handleLogin}>
-                          Sign in
-                        </button>
-                      )}
+                      <button className="btn btn-danger w-100" onClick={handleLogout}>
+                        Sign Out
+                      </button>
                     </li>
                   </ul>
                 </li>
+                {!user && (
+                  <button className="btn btn-outline-light w-100" onClick={handleLogin}>
+                    Sign in
+                  </button>
+                )}
               </div>
             </div>
           </div>
