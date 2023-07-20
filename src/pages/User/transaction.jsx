@@ -1,14 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { TransactionContext } from '../../context/transaction-context';
-import { doc, getDoc, query, where } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db, storage } from '../../lib/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 
 const TransactionPage = () => {
   const { transactionId } = useParams();
   const { updateTransaction } = useContext(TransactionContext);
-
+  const navigate = useNavigate();
   const [imageFile, setImageFile] = useState(null);
 
   const [dataTransaction, setDataTransaction] = useState({});
@@ -51,6 +51,7 @@ const TransactionPage = () => {
     };
 
     updateTransaction(transactionId, newDataTransaction);
+    navigate('/products');
   };
 
   return (

@@ -75,7 +75,7 @@ const FormEditProduct = () => {
   };
 
   const handleOnClickCancel = () => {
-    navigate('/admin/products');
+    navigate('/admin');
   };
 
   const handleUpdateProduct = async (event) => {
@@ -97,6 +97,7 @@ const FormEditProduct = () => {
 
       await updateProduct(productId, newDataProduct);
     }
+    navigate('/admin');
   };
 
   return (
@@ -129,8 +130,9 @@ const FormEditProduct = () => {
                       Product Category
                     </label>
                     <br />
-                    <select className="form-control" name="productCategory" id="productCategory" onChange={handleInputChange}>
-                      <option disabled="" defaultValue={''}></option>
+                    <select className="form-control" name="productCategory" id="productCategory" placeholder={dataProduct?.productCategory} onChange={handleInputChange}>
+                      {/* <option value={dataProduct?.productCategory}>{dataProduct?.productCategory}</option>
+                       */}
                       {categories.map((category) => (
                         <option key={category.id} value={category.categoryName}>
                           {category.categoryName}

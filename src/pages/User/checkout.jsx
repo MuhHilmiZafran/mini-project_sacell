@@ -73,6 +73,10 @@ const Checkout = () => {
     e.preventDefault();
   };
 
+  const handleClickCancel = () => {
+    navigate(`/products/product-detail/${productId}`)
+  }
+
   const handleClickPurchase = () => {
     const transactionId = uuidv4();
     const newTransaction = {
@@ -105,19 +109,19 @@ const Checkout = () => {
                 <form onSubmit={handleEditUser}>
                   <div className="form-group my-2">
                     <label htmlFor="text">Email</label>
-                    <input type="email" className="form-control" id="email" placeholder="email" value={dataUser.email} onChange={handleInputChange} />
+                    <input disabled type="email" className="form-control" id="email" placeholder="email" value={dataUser.email} onChange={handleInputChange} />
                   </div>
                   <div className="form-group my-2">
                     <label htmlFor="username">Username</label>
-                    <input type="text" className="form-control" id="username" placeholder="Username" value={dataUser.username} onChange={handleInputChange} />
+                    <input disabled type="text" className="form-control" id="username" placeholder="Username" value={dataUser.username} onChange={handleInputChange} />
                   </div>
                   <div className="form-group my-2">
                     <label htmlFor="address">Address</label>
-                    <textarea className="form-control" id="address" placeholder="Address" value={dataUser.address} onChange={handleInputChange} />
+                    <textarea disabled className="form-control" id="address" placeholder="Address" value={dataUser.address} onChange={handleInputChange} />
                   </div>
                   <div className="form-group my-2">
                     <label htmlFor="phone">Phone</label>
-                    <input type="text" className="form-control" id="phone" placeholder="08xxxxxxxxxx" value={dataUser.phone} onChange={handleInputChange} />
+                    <input disabled type="text" className="form-control" id="phone" placeholder="08xxxxxxxxxx" value={dataUser.phone} onChange={handleInputChange} />
                   </div>
                 </form>
               </div>
@@ -143,8 +147,11 @@ const Checkout = () => {
           </div>
         </div>
         <div className="container-fluid my-2 px-0">
-          <button className="btn btn-primary w-100" onClick={handleClickPurchase}>
+          <button className="btn btn-primary w-100 mb-2" onClick={handleClickPurchase}>
             Purchase Now
+          </button>
+          <button className="btn btn-secondary w-100" onClick={handleClickCancel}>
+            Cancel
           </button>
         </div>
       </div>
