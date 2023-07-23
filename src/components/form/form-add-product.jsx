@@ -48,7 +48,7 @@ const FormAddProduct = () => {
   };
 
   const handleOnClickCancel = () => {
-    navigate('/admin/products');
+    navigate('/admin');
   };
 
   const handleAddProduct = async (event) => {
